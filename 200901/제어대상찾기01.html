@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <script>
+        var lis = document.getElementsByTagName('li');
+        for(var i=0; lis.length; i++){
+            lis[i].style.color='red';
+        }
+        //for문을 통해서, i값을 0부터(i=0) 1씩 증가시키면서(i++) getElementsByTagName을 통해서 얻어낸 element들의 개수만큼을(.lenght) 반복문에 돌린다.
+        //li는 총 3개가 있기 때문에 length값은 3개가 된다.
+        //즉 lis[i]에는 0~2까지 들어오게 된다.
+    </script>
+</body>
+</html>
