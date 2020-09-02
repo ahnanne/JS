@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function get_members(){
+            return ['yein', 'gukro', 'joseph', 'baby'];
+        }
+
+        members = get_members();
+
+        for(var i=0; i < 4; i++) {
+            document.write(members[i].toUpperCase()+"<br />");
+        }
+        //i가 3보다 작을 때까지 반복문을 실행시킨다.
+        //이 경우 0부터 3까지가 호출이 된다.
+    </script>
+</body>
+</html>
