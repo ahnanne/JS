@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id="t1" href="./jQuery속성제어API01_attr.html">opentutorials</a>
+    <input id="t2" type="checkbox" checked="checked" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        var t1 = $('#t1');
+        console.log(t1.attr('href')); // ./jQuery속성제어API01_attr.html (상대 경로로 출력됨)
+        console.log(t1.prop('href')); // http://127.0.0.1:5500/200909/jQuery%EC%86%8D%EC%84%B1%EC%A0%9C%EC%96%B4API01_attr.html (절대 경로로 출력됨)
+
+        var t2 = $('#t2');
+        console.log(t2.attr('checked')); // checked 출력됨
+        console.log(t2.prop('checked')); // true 출력됨
+    </script>
+</body>
+</html>
