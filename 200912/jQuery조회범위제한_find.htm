@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="marked">html</li>
+        <li>css</li>
+        <li id="active">Javascript
+            <ul>
+                <li>Javascript Core</li>
+                <li class="marked">DOM</li>
+                <li class="marked">BOM</li>
+            </ul>
+        </li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        // $(".marked", "#active").css("background-color", "red");
+        // $("#active .marked").css("background-color", "red");
+        // $('#active').find('.marked').css("background-color", "red");
+        $('#active').css('color', 'blue').find('.marked').css("background-color", "red");
+    </script>    
+</body>
+</html>
