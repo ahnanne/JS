@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="start">
+    <ul>
+        <li><a href="./532">html</a></li>
+        <li><a href="./533">CSS</a></li>
+        <li><a href="./534">JavaScript</a>
+            <ul>
+                <li><a href="./535">JavaScript Core</a></li>
+                <li><a href="./536">DOM</a></li>
+                <li><a href="./537">BOM</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        function traverse(target, callback) {
+            if (target.nodeType === 1) {
+                // if(target.nodeName === 'A')
+                // 이 한 줄을 더 작성하게 되면 a 태그만 출력됨
+                // 'A'는 앵커태그(a href 어쩌고)의 노드네임
+                callback(target);
+                var c = target.childNodes;
+                for (var i = 0; i < c.length; i++) {
+                    traverse(c[i], callback);
+                }
+            }
+        }
+        // traverse(document.getElementById('start'), function(elem) {
+        //    console.log(elem);
+        // });
+
+        // traverse(document.getElementById('start'), function(elem) {
+        //    elem.style.color = 'thistle';
+        // });
+
+        // traverse(document.getElementById('start'), function(elem) {
+        //    if(elem.nodeName === 'A'){
+        //      elem.style.backgroundColor = 'thistle';
+        //    }
+        // });
+    </script>
+</body>
+
+</html>
