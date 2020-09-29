@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="button1" id="target1">
+    <input type="button" value="button2" id="target2">
+    <script>
+        var t1 = document.getElementById('target1');
+        var t2 = document.getElementById('target2');
+        function btn_listener(event){
+            switch(event.target.id){
+                case 'target1':
+                alert(1);
+                break;
+                // break 없으면 case2도 바로 실행됨
+                case 'target2':
+                alert(2);
+                break;
+            }
+        }
+        t1.addEventListener('click', btn_listener);
+        t2.addEventListener('click', btn_listener);
+    </script>
+</body>
+</html>

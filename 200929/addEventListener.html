@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="target" value="button">
+    <script>
+        var t = document.getElementById('target');
+        t.addEventListener('click', function(event){
+            alert('Hello world, '+event.target.value);
+        });
+        // t에 click이라는 이벤트를 발생했을 때,
+        // 두 번째 인자로 전달한 함수가 호출이 되면서
+        // alert가 실행된다.
+
+        // event라는 매개변수를 이용하여, event 객체가 가지고 있는 여러가지 property에 접근할 수 있다.
+    </script>
+</body>
+</html>
