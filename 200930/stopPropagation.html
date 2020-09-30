@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            html {
+                border: 5px solid sienna;
+                padding: 30px;
+            }
+
+            body {
+                border: 5px solid greenyellow;
+                padding: 30px;
+            }
+
+            fieldset {
+                border: 5px solid plum;
+                padding: 30px;
+            }
+
+            input {
+                border: 5px solid purple;
+                padding: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <fieldset>
+            <legend>event propagation</legend>
+            <!-- 'propagation' means '전파' -->
+            <input type="button" id="target" value="target">
+        </fieldset>
+
+        <script>
+            function handler(event) {
+                var phases = ['capturing', 'target', 'bubbling']
+                console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase - 1]);
+            }
+            // console.log의 첫 번째 인자는 event target을 출력함 
+            // event target은 가장 깊은 곳에 있는 element
+            // 즉 여기서는 항상 input 태그
+            // 두 번째 인자의 this는 event handler가 호출된 element를 지칭
+
+            function stopHandler(event){
+                var phases = ['capturing', 'target', 'bubbling']
+                console.log(event.target.nodeName, this.nodeName, phases[event.eventPhase - 1]);
+                event.stopPropagation();
+            }
+
+            document.getElementById('target').addEventListener('click', handler, false);
+            document.querySelector('fieldset').addEventListener('click', handler, false);
+            document.querySelector('body').addEventListener('click', stopHandler, false);
+            document.querySelector('html').addEventListener('click', handler, false);
+            // 위 함수들의 세 번째 인자에는 use capturing 여부에 대한 Boolean값('true' or 'false')이 온다.
+        </script>
+    </body>
+
+    </html>
+</body>
+
+</html>
