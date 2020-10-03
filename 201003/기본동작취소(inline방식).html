@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <label>prevent event on</label><input type="checkbox" name="eventprevent" id="prevent" value="on">
+    </p>
+    <p>
+        <a href="https://milooy.wordpress.com/"
+            onclick="if(document.getElementById('prevent').checked) return false;">opentutorials</a>
+    </p>
+    <!-- 여기서의 기본 동작 : a 태그 클릭 시 href 속성의 URL로 이동 -->
+    <!-- checkbox가 체크되어 있는 경우, 기본 동작이 실행되지 않음 -->
+    <p>
+        <form action="https://milooy.wordpress.com/"
+            onsubmit="if(document.getElementById('prevent').checked) return false;">
+            <input type="submit">
+        </form>
+    </p>
+    <!-- 여기서의 기본 동작 : form에서 submit 버튼 클릭 시 데이터 전송됨 -->
+    <!-- checkbox가 체크되어 있는 경우, 기본 동작이 실행되지 않음 -->
+</body>
+
+</html>
