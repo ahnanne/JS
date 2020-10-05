@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <input id="target" type="name">
+    <script>
+        var t = document.getElementById('target');
+        t.addEventListener('change', function(event){
+            document.getElementById('result').innerHTML=event.target.value;
+            // event 객체의 target(즉 여기선 change event가 발생한 대상인 element)의 value를, innerHTML API를 이용하여 p 태그의 자식 요소로 추가함
+        });
+    </script>
+</body>
+</html>
