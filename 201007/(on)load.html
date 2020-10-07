@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <input id="target" type="name">
     <script>
+    //     window.onload = function(){
+    //     var t = document.getElementById('target');
+    //     console.log(t);
+    // }
+    window.addEventListener('load', function(){
         var t = document.getElementById('target');
-        t.addEventListener('blur', function(event){
-            console.log('blur');
-        });
-        t.addEventListener('focus', function(event){
-            console.log('focus');
-        });
+        console.log(t);
+        })
     </script>
+</head>
+
+<body>
+    <p id="target">Hello</p>
 </body>
+
 </html>
