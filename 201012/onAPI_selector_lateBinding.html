@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $('body').on('click', 'a, li', function(event){
+            console.log(this.tagName);
+        })
+        // 아직 존재하지 않는 element에 대해서도 event handler를 설치할 수 있음
+    </script>
+    <ul>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ul>
+</body>
+</html>
