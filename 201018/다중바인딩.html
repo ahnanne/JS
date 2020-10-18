@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="target">
+    <p id="status"></p>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        // 방법1
+        // $('#target').on('focus blur', function(e){
+        //     $('#status').html(e.type);
+        // })
+        // // event type이 2개(focus, blur)
+        // // 이 2개의 event type들은 동일한 event handler를 갖게 됨
+
+        // 방법2-1
+        // var handler = function(e){
+        //     $('#status').html(e.type);
+        // }
+        // $('#target').on(
+        //     {
+        //         'focus' : handler,
+        //         'blur' : handler
+        //     }
+        // )
+
+        // 방법2-2 (event type에 따라 각각 다른 event handler를 실행하고 싶은 경우 아래 양식에 맞춰 수정)
+        //     $('#target').on({
+        //     'focus' : function(e){
+
+        //     }, 
+        //     'blur' : function(e){
+
+        //     }
+        // })
+
+        // 방법3
+        var handler = function (e) {
+            $('#status').html(e.type);
+        }
+        $('#target').on('focus', handler).on('blur', handler);
+    </script>
+</body>
+
+</html>

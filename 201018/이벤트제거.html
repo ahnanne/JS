@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="target"></textarea>
+    <input type="button" id="remove" value="remove">
+    <p id="status"></p>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        var handler = function(e){
+            $('#status').text(e.type+Math.random());
+        };
+        $('#target').on('focus blur', handler)
+        $('#target').on('focus', function(e){
+            console.log(1);
+        });
+        $('#remove').on('click', function(e){
+            $('#target').off('focus', handler);
+            // event type이 focus이면서 event handler가 handler인 이벤트를 제거
+            // 만약 focus와 blur에 대한 모든 이벤트를 제거하고 싶을 경우, 첫 번째 인자만 지정하며, 'focus blur'로 지정하면 됨
+        })
+    </script>
+</body>
+</html>
